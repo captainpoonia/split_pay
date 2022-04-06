@@ -1,0 +1,75 @@
+<div class="d-flex ">
+    <app-dashboard></app-dashboard>
+
+    <div class="d-flex justify-content-center align-items-center  m-auto mt-5   ">
+
+        <form (ngSubmit)="createExpenseSubmit(createExpenseForm)" #createExpenseForm="ngForm">
+            <div class=" form-outline  jumbotron mb-4  mt-4 pt-2 pb-4">
+                <h3>
+                    <p class=" jumbotron  align-items-center  pt-3 pb-2  ">Add Payment</p>
+                </h3>
+
+                <label class="form-label ">Select Group</label>
+                <select id="g_id" class="form-control mb-2" name="g_id" [(ngModel)]="expensedetails.g_id" #g_id="ngModel"
+                    requiredrequired>
+                    <option *ngFor="let group of groupsService.grouplist" value="{{group[1]}}">
+                        {{ group[0]}}
+                    </option>
+                </select>
+                <p class="small text-danger my-2" *ngIf="g_id.dirty && g_id.invalid">
+                    group can't be empty !
+                </p>
+
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control mb-2" id="title" name="title" [(ngModel)]="expensedetails.e_title"
+                    #title="ngModel" required>
+                <p class="small text-danger my-2" *ngIf="title.dirty && title.invalid">
+                    title can't be empty !
+                </p>
+
+                <label class="form-label">Description</label>
+
+                <textarea class="form-control mb-2" id="paid_for" name="paid_for " [(ngModel)]="expensedetails.paid_for"
+                    #paid_for="ngModel"> </textarea>
+
+                <label class="form-label ">Amount</label>
+                <input type="number" class="form-control mb-2" id="amount" name="amount" [(ngModel)]="expensedetails.amount"
+                    #amount="ngModel" required>
+                <p class="small text-danger my-2" *ngIf="amount.dirty && amount.invalid">
+                    amount can't be empty !
+                </p>
+
+
+                <label class="form-label">Paid By</label>
+                <select id="paid_by" class="form-control mb-4 " name="paid_by" [(ngModel)]="expensedetails.paid_by"
+                    #paid_by="ngModel" required>
+                    <option *ngFor="let user of usersService.userlist" value="{{user.userId}}">
+                        {{ user.username}}
+                    </option>
+                </select>
+                <p class="small text-danger my-2" *ngIf="paid_by.dirty && paid_by.invalid">
+                    paid by can't be empty !
+                </p>
+
+
+                <!-- Submit button -->
+                <input type="submit" value="Add" class="btn btn-primary bg-primary  mb-0"
+                    [disabled]="createExpenseForm.pristine || createExpenseForm.invalid">
+                <div class="alert alert-success d-flex align-items-center mt-2" role="alert" *ngIf="successFlag">
+                    <i class="material-icons">check_circle</i>
+                    <div class="ms-2">
+                        New expense added successfully !
+                    </div>
+                </div>
+
+                <div class="alert alert-danger d-flex align-items-center mt-2" role="alert" *ngIf="errorFlag">
+                    <i class="material-icons"> warning </i>
+                    <div class="ms-2">
+                        There was an unexpected error. We couldn't complete your request.
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+/**/
+
+/*form css */
+
+.CCform {
+  
+  border-radius: 15px;
+
+}
+
+/*.CCform .shadow-lg {*/
+/*  -webkit-box-shadow: 0 1rem 3rem rgba(255, 249, 249, 0.233) !important;*/
+/*  box-shadow: 0 1rem 3rem rgba(255, 249, 249, 0.233) !important;*/
+/*}*/
+
+.CCform h2 {
+  font-size: 40px;
+  line-height: 60px;
+  color:#343a40;
+}
+
+.CCform .input-group .err {
+  border-radius: 2px;
+  margin-top: 3px;
+  padding: 0px 4px;
+  display: none;
+  background-color: red;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.CCform input, .CCform select {
+  height: 40px;
+  width: 100%;
+  /* text-align: center; */
+  padding: 5px;
+  padding-left: 10px;
+  border: 0px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #235264;
+ 
+}
+
+.CCform input::-webkit-input-placeholder, .CCform select::-webkit-input-placeholder {
+  color: #235264;
+}
+
+.CCform input:-ms-input-placeholder, .CCform select:-ms-input-placeholder {
+  color: #235264;
+}
+
+.CCform input::-ms-input-placeholder, .CCform select::-ms-input-placeholder {
+  color: #235264;
+}
+
+.CCform input::placeholder, .CCform select::placeholder {
+  color: #235264;
+}
+
+.CCform input:-webkit-autofill, .CCform select:-webkit-autofill {
+  -webkit-text-fill-color: #235264 !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.CCform input:focus, .CCform select:focus {
+  outline: none;
+}
+
+.CCform select {
+  background-color: white;
+}
+
+.CCform .CCform-Srow {
+  line-height: 1;
+}
+
+.CCform .CCform-Srow input[type="submit"] {
+  width: 190px;
+  padding: 12px 60px;
+  height: auto;
+  background: #235264;
+  color: white;
+  font-size: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.CCform .CCform-Srow p {
+  font-size: 12px;
+  line-height: 20px;
+}
+.CCform .input-group{
+    margin-bottom:0px !important;
+}
+
+#smsg {
+  display: none;
+}
+
+#smsg h2 {
+  font-size: 48px;
+  line-height: 71px;
+  color: #235264;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+min-width: 0;
+width: 100%;
+}
+

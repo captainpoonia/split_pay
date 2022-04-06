@@ -1,0 +1,47 @@
+
+<div class="jumbotron py-2 mt-3 border rounded">
+  <p class="display-4 mb-0 text-center">Add members </p>
+</div>
+<div class="row mt-0 ">
+  <div class="  col-md-12">
+    <form (ngSubmit)="addMemberSubmit(addMemberForm)" #addMemberForm="ngForm">
+      <div class="d-flex form-group mt-0   ">
+        <input type="text" class="form-control m-0 ml-2" name="username" [(ngModel)]="user.username" #username="ngModel"
+          placeholder="Enter Name" required>
+
+        <input type="text" class="form-control m-0 ml-2 "  name="userEmail" [(ngModel)]="user.userEmail" #userEmail="ngModel"
+          placeholder="Enter Email" required>
+
+        <input type="submit" class="btn btn-primary material-icons m-0 ml-2 mr-2" value="add"
+         >
+      </div>
+    </form>
+
+    <table class="table table-bordered mt-3 mb-5 text-center ">
+      <thead class="thead-light">
+        <tr>
+          <th>Sr.No</th>
+          <th>Members</th>
+          <th>Email</th>
+          <th>Delete Member</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users, index as userno">
+          <td><span>{{userno + 1}}</span></td>
+          <td><span>{{users[userno][0]}}</span></td>
+          <td><span>{{users[userno][1]}}</span></td>
+          <td><button (click)="deleteMember(userno)" class="btn btn-success">Remove User</button></td>
+      </tr>
+        <!-- <tr *ngFor="let item of members; index as userno">
+          <td><span>{{userno + 1}}</span></td>
+          <td><span>{{item.username}}</span></td>
+          <td><span>{{item.userEmail}}</span></td>
+          <td><button (click)="deleteMember(userno)" class="btn btn-success">Remove User</button></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+
+</div>
